@@ -24,7 +24,7 @@ class ExpandableTextWidget extends StatefulWidget {
   final Color backgroundColor;
   final double elevation;
   final ShapeBorder shape;
-  final Image imageChild;
+  final Widget imageChild;
   final Widget downIcon;
   final Widget upIcon;
 
@@ -41,19 +41,14 @@ class _ExpandableTextState extends State<ExpandableTextWidget> {
       color: Colors.white,
       margin: EdgeInsets.all(8),
       elevation: 2.0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(8)),
-      ),
+      shape: widget.shape,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            color: Color(0xff00cccc),
-            child: Center(
-              child: widget.imageChild,
-            ),
+            child: widget.imageChild,
           ),
           Container(
             margin: EdgeInsets.all(16.0),
