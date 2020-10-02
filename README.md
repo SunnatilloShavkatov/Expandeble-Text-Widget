@@ -2,10 +2,9 @@
 ## Getting Started  
   
 To use this plugin, add `expandable_text_widget` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).  
-<<<<<<< HEAD
-=======
 
 ### Demo 
+
 ![Preview](assets/demo.jpg)
   
 ### Example  
