@@ -1,16 +1,13 @@
-
-Makes an interesting splash effect when tapping its child widget.  
   
 ## Getting Started  
   
-To use this plugin, add `splash_tap` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).  
-  
-The color can be set with the **splashColor** property. The splash size is dependent on the size of the child widget passed in - which is constrained by the **minRadius** and **maxRadius** parameters.
+To use this plugin, add `sunnatillo_quanticuz` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).  
   
 ### Example  
   
 ```import 'package:expandable_text_widget/expandable_text_widget.dart';
    import 'package:flutter/material.dart';
+   import 'package:flutter_svg/flutter_svg.dart';
    
    void main() {
      runApp(MyApp());
@@ -25,6 +22,7 @@ The color can be set with the **splashColor** property. The splash size is depen
            primarySwatch: Colors.blue,
          ),
          home: ExpandableDemo(),
+         debugShowCheckedModeBanner: false,
        );
      }
    }
@@ -41,39 +39,60 @@ The color can be set with the **splashColor** property. The splash size is depen
          appBar: AppBar(
            title: Text("Expandable Text Widget Demo"),
          ),
-         body: Column(
-           mainAxisAlignment: MainAxisAlignment.center,
-           crossAxisAlignment: CrossAxisAlignment.stretch,
-           children: <Widget>[
-             ExpandableTextWidget(
-               backgroundColor: Colors.white,
-               elevation: 2.0,
-               shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
-               ),
-               title: Text(
-                 "Sarlavha",
-                 style: TextStyle(color: Colors.grey[800], fontSize: 24),
-               ),
-               imageChild: Image.asset(
-                 "assets/logo.png",
-                 fit: BoxFit.scaleDown,
-               ),
-               textStyle: TextStyle(color: Colors.black, fontSize: 16),
-               text:
+         body: SingleChildScrollView(
+           child: Container(
+             child: Column(
+               mainAxisAlignment: MainAxisAlignment.start,
+               crossAxisAlignment: CrossAxisAlignment.stretch,
+               children: <Widget>[
+                 ExpandableTextWidget(
+                   backgroundColor: Colors.white,
+                   elevation: 2.0,
+                   shape: RoundedRectangleBorder(
+                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                   ),
+                   title: Text(
+                     "Sarlavha",
+                     style: TextStyle(color: Colors.grey[800], fontSize: 24),
+                   ),
+                   imageChild: Image.asset(
+                     "assets/logo.png",
+                     fit: BoxFit.scaleDown,
+                   ),
+                   textStyle: TextStyle(color: Colors.black, fontSize: 16),
+                   text:
+                       "The color can \n be set with the splashColor property. \nThe splash size is \ndependent on the size of the child widget passed in - which is constrained by the minRadius and maxRadius parameters.",
+                   downIcon: SvgPicture.asset(
+                     "assets/down.svg",
+                     color: Colors.black,
+                     fit: BoxFit.scaleDown,
+                   ),
+                   upIcon: SvgPicture.asset(
+                     "assets/up.svg",
+                     color: Colors.black,
+                     fit: BoxFit.scaleDown,
+                   ),
+                 ),
+                 SizedBox(height: 20,),
+                 ExpandableTextWidget(
+                   backgroundColor: Colors.white,
+                   elevation: 2.0,
+                   shape: RoundedRectangleBorder(
+                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                   ),
+                   title: Text(
+                     "Sarlavha",
+                     style: TextStyle(color: Colors.grey[800], fontSize: 24),
+                   ),
+                   textStyle: TextStyle(color: Colors.black, fontSize: 16),
+                   text:
                    "The color can \n be set with the splashColor property. \nThe splash size is \ndependent on the size of the child widget passed in - which is constrained by the minRadius and maxRadius parameters.",
-               downIcon: Image.asset(
-                 "assets/down.png",
-                 color: Colors.black,
-                 fit: BoxFit.scaleDown,
-               ),
-               upIcon: Image.asset(
-                 "assets/up.png",
-                 color: Colors.black,
-                 fit: BoxFit.scaleDown,
-               ),
-             )
-           ],
+                   downIcon: Text("show"),
+                   upIcon: Text("hide"),
+                 ),
+               ],
+             ),
+           ),
          ),
        );
      }

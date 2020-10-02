@@ -1,4 +1,4 @@
-library expandable_text_widget;
+library sunnatillo_quanticuz;
 
 import 'package:flutter/material.dart';
 
@@ -27,6 +27,7 @@ class ExpandableTextWidget extends StatefulWidget {
   final Widget imageChild;
   final Widget downIcon;
   final Widget upIcon;
+  final MainAxisAlignment alignmentBottomIcon = MainAxisAlignment.start;
 
   @override
   _ExpandableTextState createState() => _ExpandableTextState();
@@ -51,7 +52,7 @@ class _ExpandableTextState extends State<ExpandableTextWidget> {
             child: widget.imageChild,
           ),
           Container(
-            margin: EdgeInsets.all(16.0),
+            margin: EdgeInsets.all(10.0),
             child: new Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -63,21 +64,21 @@ class _ExpandableTextState extends State<ExpandableTextWidget> {
                   style: widget.textStyle,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: widget.alignmentBottomIcon,
                   children: <Widget>[
                     if (descTextShowFlag)
-                      IconButton(
-                        icon: widget.upIcon,
-                        onPressed: () {
+                      InkWell(
+                        child: widget.upIcon,
+                        onTap: () {
                           setState(() {
                             descTextShowFlag = !descTextShowFlag;
                           });
                         },
                       )
                     else
-                      IconButton(
-                        icon: widget.downIcon,
-                        onPressed: () {
+                      InkWell(
+                        child: widget.downIcon,
+                        onTap: () {
                           setState(() {
                             descTextShowFlag = !descTextShowFlag;
                           });
