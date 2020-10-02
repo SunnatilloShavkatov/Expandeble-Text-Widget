@@ -1,5 +1,3 @@
-library sunnatillo_quanticuz;
-
 import 'package:flutter/material.dart';
 
 class ExpandableTextWidget extends StatefulWidget {

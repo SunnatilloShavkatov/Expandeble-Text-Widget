@@ -1,11 +1,11 @@
   
 ## Getting Started  
   
-To use this plugin, add `sunnatillo_quanticuz` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).  
+To use this plugin, add `expandable_text_widget` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).  
   
 ### Example  
   
-```import 'package:expandable_text_widget/expandable_text_widget.dart';
+```import 'package:sunnatillo_quanticuz/expandable_text_widget.dart';
    import 'package:flutter/material.dart';
    import 'package:flutter_svg/flutter_svg.dart';
    
