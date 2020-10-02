@@ -1,4 +1,4 @@
-library flutter_expanded_text_widget;
+library expandable_text_widget;
 
 import 'package:flutter/material.dart';
 

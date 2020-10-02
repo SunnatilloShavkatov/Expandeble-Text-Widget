@@ -1,7 +1,7 @@
-name: flutter_expanded_text
+name: expandabel_text_widget
 description: A new Flutter package.
 version: 0.0.1
-homepage: https://github.com/SunnatilloQuantic/Flutter-Expandable-Text-Widget
+homepage: https://github.com/SunnatilloQuantic/Expandeble-Text-Widget
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
