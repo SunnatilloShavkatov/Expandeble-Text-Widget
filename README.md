@@ -6,7 +6,7 @@ To use this plugin, add `expandable_text_widget` as a [dependency in your pubspe
 =======
 
 ### Demo 
-
+![Preview](assets/demo.jpg)
   
 ### Example  
   
