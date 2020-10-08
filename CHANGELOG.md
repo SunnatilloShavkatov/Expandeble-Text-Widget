@@ -12,3 +12,6 @@
 
 ## [0.0.5] - 2020/10/2
 * github link.
+
+## [0.0.6] - 2020/10/2
+* example and documentation added.

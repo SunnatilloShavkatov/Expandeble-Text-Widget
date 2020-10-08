@@ -1,30 +1,60 @@
 import 'package:flutter/material.dart';
 
 class ExpandableTextWidget extends StatefulWidget {
-
-  const ExpandableTextWidget({
-    Key key,
-    this.text,
-    this.title,
-    this.textStyle,
-    this.backgroundColor,
-    this.downIcon,
-    this.upIcon,
-    this.shape,
-    this.imageChild,
-    this.elevation
-  }): assert(text != null && title != null),
+  const ExpandableTextWidget(
+      {Key key,
+      this.text,
+      this.title,
+      this.textStyle,
+      this.backgroundColor,
+      this.downIcon,
+      this.upIcon,
+      this.shape,
+      this.imageChild,
+      this.elevation})
+      : assert(text != null && title != null),
         super(key: key);
 
+  /// Text, should not be null
   final String text;
+
+  /// Style of text
   final TextStyle textStyle;
+
+  /// Typically a [Text] widget that contains a description of the current
+  /// contents of the app.
   final Widget title;
+
+  /// Color of the default background widget
   final Color backgroundColor;
+
+  /// The z-coordinate at which to place this card. This controls the size of
+  /// the shadow below the card.
+  ///
+  /// Defines the card's [Material.elevation].
+  ///
+  /// If this property is null then [CardTheme.elevation] of
+  /// [ThemeData.cardTheme] is used. If that's null, the default value is 1.0.
   final double elevation;
+
+  /// The shape of the card's [Material].
+  ///
+  /// Defines the card's [Material.shape].
+  ///
+  /// is used. If that's null then the shape will be a [RoundedRectangleBorder]
+  /// with a circular corner radius of 4.0.
   final ShapeBorder shape;
+
+  /// image widget
   final Widget imageChild;
+
+  /// down icon and widget
   final Widget downIcon;
+
+  /// up icon and widget
   final Widget upIcon;
+
+  ///
   final MainAxisAlignment alignmentBottomIcon = MainAxisAlignment.start;
 
   @override
