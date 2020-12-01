@@ -5,8 +5,10 @@ To use this plugin, add `expandable_text_widget` as a [dependency in your pubspe
 
 ### Demo 
 
-![Preview](assets/demo.jpg)
-  
+
+# <img src="https://github.com/SunnatilloQuantic/Expandeble-Text-Widget/blob/main/assets/demo.jpg"  width="160" height="320" >
+
+
 ### Example  
   
 ```import 'package:sunnatillo_quanticuz/expandable_text_widget.dart';
