@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class ExpandableTextWidget extends StatefulWidget {
   const ExpandableTextWidget(
-      {Key key,
+      {Key? key,
       this.text,
       this.title,
+      this.margin,
       this.textStyle,
       this.backgroundColor,
       this.downIcon,
@@ -16,17 +17,17 @@ class ExpandableTextWidget extends StatefulWidget {
         super(key: key);
 
   /// Text, should not be null
-  final String text;
+  final String? text;
 
   /// Style of text
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   /// Typically a [Text] widget that contains a description of the current
   /// contents of the app.
-  final Widget title;
+  final Widget? title;
 
   /// Color of the default background widget
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
   /// The z-coordinate at which to place this card. This controls the size of
   /// the shadow below the card.
@@ -35,7 +36,7 @@ class ExpandableTextWidget extends StatefulWidget {
   ///
   /// If this property is null then [CardTheme.elevation] of
   /// [ThemeData.cardTheme] is used. If that's null, the default value is 1.0.
-  final double elevation;
+  final double? elevation;
 
   /// The shape of the card's [Material].
   ///
@@ -43,19 +44,28 @@ class ExpandableTextWidget extends StatefulWidget {
   ///
   /// is used. If that's null then the shape will be a [RoundedRectangleBorder]
   /// with a circular corner radius of 4.0.
-  final ShapeBorder shape;
+  final ShapeBorder? shape;
 
   /// image widget
-  final Widget imageChild;
+  final Widget? imageChild;
 
   /// down icon and widget
-  final Widget downIcon;
+  final Widget? downIcon;
 
   /// up icon and widget
-  final Widget upIcon;
+  final Widget? upIcon;
 
   ///
   final MainAxisAlignment alignmentBottomIcon = MainAxisAlignment.start;
+
+  /// The empty space that surrounds the card.
+  ///
+  /// Defines the card's outer [Container.margin].
+  ///
+  /// If this property is null then [CardTheme.margin] of
+  /// [ThemeData.cardTheme] is used. If that's null, the default margin is 4.0
+  /// logical pixels on all sides: `EdgeInsets.all(4.0)`.
+  final EdgeInsetsGeometry? margin;
 
   @override
   _ExpandableTextState createState() => _ExpandableTextState();
@@ -67,9 +77,9 @@ class _ExpandableTextState extends State<ExpandableTextWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white,
-      margin: EdgeInsets.all(8),
-      elevation: 2.0,
+      color: widget.backgroundColor,
+      margin: widget.margin,
+      elevation: widget.elevation,
       shape: widget.shape,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -81,12 +91,12 @@ class _ExpandableTextState extends State<ExpandableTextWidget> {
           ),
           Container(
             margin: EdgeInsets.all(10.0),
-            child: new Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                widget.title,
+                widget.title!,
                 Text(
-                  widget.text,
+                  widget.text!,
                   maxLines: descTextShowFlag ? 16 : 2,
                   textAlign: TextAlign.start,
                   style: widget.textStyle,
@@ -98,18 +108,14 @@ class _ExpandableTextState extends State<ExpandableTextWidget> {
                       InkWell(
                         child: widget.upIcon,
                         onTap: () {
-                          setState(() {
-                            descTextShowFlag = !descTextShowFlag;
-                          });
+                          setState(() => descTextShowFlag = !descTextShowFlag);
                         },
                       )
                     else
                       InkWell(
                         child: widget.downIcon,
                         onTap: () {
-                          setState(() {
-                            descTextShowFlag = !descTextShowFlag;
-                          });
+                          setState(() => descTextShowFlag = !descTextShowFlag);
                         },
                       )
                   ],

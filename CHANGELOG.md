@@ -15,3 +15,6 @@
 
 ## [0.0.6] - 2020/10/2
 * example and documentation added.
+
+## [0.0.7] - 2021/03/24
+* null safety

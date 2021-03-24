@@ -1,11 +1,12 @@
 name: expandable_text_widget
-description: A new Flutter package.
-version: 0.0.6
+description: A new Flutter package. Works for iOS, Android, Web, Linux, MacOS and Windows apps
+version: 0.0.7
+author: Sunnatillo Shavkatov <sunnatilloshavkatov@gmail.com>
 homepage: https://github.com/SunnatilloQuantic/Expandeble-Text-Widget
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0 <2.0.0"
+  sdk: ">=2.12.0"
+  flutter: ">=2.0.0"
 
 dependencies:
   flutter:

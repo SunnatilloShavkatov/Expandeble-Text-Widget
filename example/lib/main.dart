@@ -2,9 +2,7 @@ import 'package:expandable_text_widget/expandable_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -54,10 +52,9 @@ class _ExpandableDemoState extends State<ExpandableDemo> {
                 ),
                 textStyle: TextStyle(color: Colors.black, fontSize: 16),
                 text:
-                "The color can \n be set with the splashColor property. \nThe splash size is \ndependent on the size of the child widget passed in - which is constrained by the minRadius and maxRadius parameters.",
+                    "The color can \n be set with the splashColor property. \nThe splash size is \ndependent on the size of the child widget passed in - which is constrained by the minRadius and maxRadius parameters.",
                 downIcon: SvgPicture.asset(
                   "assets/down.svg",
-                  color: Colors.black,
                   fit: BoxFit.scaleDown,
                 ),
                 upIcon: SvgPicture.asset(
@@ -81,7 +78,7 @@ class _ExpandableDemoState extends State<ExpandableDemo> {
                 ),
                 textStyle: TextStyle(color: Colors.black, fontSize: 16),
                 text:
-                "The color can \n be set with the splashColor property. \nThe splash size is \ndependent on the size of the child widget passed in - which is constrained by the minRadius and maxRadius parameters.",
+                    "The color can \n be set with the splashColor property. \nThe splash size is \ndependent on the size of the child widget passed in - which is constrained by the minRadius and maxRadius parameters.",
                 downIcon: Text("show"),
                 upIcon: Text("hide"),
               ),
